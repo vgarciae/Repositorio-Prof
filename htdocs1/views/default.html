@@ -1,0 +1,25 @@
+<?php
+	require_once("lib/template.php");
+	require_once("views/header.html");
+?>
+
+<div class="container-fluid">
+	<div class="row">		
+		<?php  foreach($users as $user) { ?>
+			<div class="col-sm-6 col-md-3 well">
+			    <center>
+			    <a href='<?php echo $wpath; ?>edit.php?id=<?php printf("%s", $user["id"]); ?>' data-toggle="modal">
+					<img src="<?php echo $wpath; ?>/assets/images/default-avatar.png" name="aboutme" width="140" height="140" class="img-circle">
+				</a>
+			    <h3>
+					<?php printf("%s", $user["firstname"]); ?> 
+					<?php printf("%s", $user["lastname"]); ?>
+				</h3>
+				<em><?php printf("%s", $user["username"]); ?></em>
+			    <em><?php printf("%s", $user["email"]); ?></em>
+				</center>
+			</div>
+		<?php } ?>
+	</div>
+</div>
+<?php require_once("views/footer.html"); ?>

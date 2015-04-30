@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><?php echo $title; ?></title>
+	<meta charset="utf-8" />
+	<script type="text/javascript" src="<?php echo $wpath; ?>assets/js/jquery.js" ></script>
+	<script type="text/javascript" src="<?php echo $wpath; ?>assets/js/bootstrap.min.js" ></script>
+	<script type="text/javascript" src="<?php echo $wpath; ?>assets/js/sha512.js" ></script>
+	<script type="text/javascript" src="<?php echo $wpath; ?>assets/js/forms.js" ></script>
+	
+	<link rel="stylesheet" type="text/css" href="<?php echo $wpath; ?>assets/css/bootstrap-theme.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo $wpath; ?>assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo $wpath; ?>assets/css/login.css" />
+
+</head>
+
+<body>
+<section id="login">
+    <div class="container">
+    	<div class="row">
+			<?php echo $msg; ?>
+		</div>		
+		<div class="row">
+    	    <div class="col-xs-12">
+        	    <div class="form-wrap">
+                <h1>Iniciar sesión</h1>
+                    <form role="form" action="login.php" method="post" id="login-form" autocomplete="off">
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Correo electrónico</label>
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Correo electrónico">
+                        </div>
+                        <div class="form-group">
+                            <label for="key" class="sr-only">Contraseña</label>
+                            <input type="password" name="password" id="key" class="form-control" placeholder="Contraseña">
+                        </div>
+
+                        <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Iniciar sesión" onclick="formhash(this.form,this.form.password);">
+                    </form>
+					
+                    <a href="<?php echo $wpath; ?>login.php?action=register" class="register">¿Deseas registrarte?</a>
+                    <hr>
+        	    </div>
+    		</div> <!-- /.col-xs-12 -->
+    	</div> <!-- /.row -->
+    </div> <!-- /.container -->
+</section>
+
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <p>Copyright © - 2015</p>
+                <p>Curso PHP - 27-30 Abril</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
